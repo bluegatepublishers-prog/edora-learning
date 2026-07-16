@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Edora Learning Corporate Website
 
-## Getting Started
+Production-ready corporate marketing website for Edora Learning Pvt. Ltd. and its flagship platform, Edora Education OS (EEOS).
 
-First, run the development server:
+## Technology
+
+- Next.js 16 App Router, React 19 and TypeScript
+- Tailwind CSS v4 with a reusable global brand system
+- Lucide React icons
+- Manrope typography with expressive blue, yellow and orange visual treatments
+- Server Components by default; Client Components only for mobile navigation and contact-form state
+
+## Local setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`/`, `/platform`, `/solutions`, `/demo`, `/ai`, `/about`, `/partners`, `/contact`, `/privacy`, `/terms`
 
-## Learn More
+Generated metadata routes: `/robots.txt`, `/sitemap.xml`, `/manifest.webmanifest`.
 
-To learn more about Next.js, take a look at the following resources:
+The `/demo` route provides role-based product previews. Add only approved demonstration screenshots using the filenames and privacy process in `docs/EDORA_DEMO_SCREENSHOT_GUIDE.md`. Missing screenshots render intentional placeholders.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Copy `.env.example` to a local environment file only when configuring a deployment. Do not commit credentials.
 
-## Deploy on Vercel
+- `CONTACT_EMAIL_TO`: must be `edoralearning@gmail.com`
+- `EMAIL_FROM`: verified sender accepted by the email provider
+- `RESEND_API_KEY`: API key for optional Resend delivery
+- `NEXT_PUBLIC_SITE_URL`: public site URL (reserved for deployment configuration)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The contact Server Action validates all fields. Automatic delivery occurs only when all three email values are configured and the destination exactly matches the approved Edora mailbox. The main email contains the full enquiry and timestamp, and uses the visitor’s address as reply-to. A visitor confirmation is best-effort and cannot fail the main submission.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Without valid configuration, the UI clearly states that nothing was sent and provides a prefilled `mailto:edoralearning@gmail.com` fallback. There is no database and no submission is stored by the application.
+
+### Manual email test
+
+1. Set the three server-only email values in the deployment environment.
+2. Submit a valid enquiry from `/contact?interest=school`.
+3. Confirm the School Solution is preselected.
+4. Confirm the Edora mailbox receives every form field and the submission timestamp.
+5. Confirm Reply works to the visitor address.
+6. Remove one local email value and verify the form reports that nothing was sent and exposes the prepared email link.
+
+## Design system
+
+The shared styles in `app/globals.css` define the blue, yellow and orange brand palette, colourful card treatments, page heroes and three reusable button variants:
+
+- Primary: orange-to-gold gradient
+- Secondary: blue outline with pale-blue hover
+- Dark: deep navy with white text
+
+CTA links were audited across the header, footer, homepage and internal pages. All routes point to real pages, valid solution anchors or contact queries that preselect the matching enquiry area.
+
+## Verification
+
+```bash
+npm run lint
+npx tsc --noEmit
+npm run build
+git diff --check
+git status --short
+```
+
+## Deployment and domain
+
+1. Import this repository into Vercel and select the Next.js preset.
+2. Add only required production environment values in Vercel project settings.
+3. Deploy a preview and complete the checklist in `docs/EDORA_WEBSITE_CHECKLIST.md`.
+4. Add `edoralearning.in` and `www.edoralearning.in` in project Domains.
+5. Apply the DNS records supplied by Vercel, select the canonical domain and verify HTTPS.
+6. Confirm email delivery and all generated metadata routes on production.
+
+No deployment is performed by this repository setup.
