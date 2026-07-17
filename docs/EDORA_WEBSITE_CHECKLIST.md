@@ -50,11 +50,15 @@
 
 ## CTA and link audit
 
-- [ ] Check header, mobile menu, footer and final CTA links
-- [ ] Check homepage audience anchors and EEOS/AI links
-- [ ] Check each solution CTA and contact preselection
-- [ ] Check platform, About, Partners, Privacy and Terms links
-- [ ] Confirm there are no empty hrefs, `#` placeholders or missing IDs
+- [x] Header, mobile menu, footer and final CTA destinations reviewed
+- [x] Homepage audience cards use specific labels and valid solution anchors
+- [x] Platform role blocks link to demo and contextual enquiry journeys
+- [x] Eight solution journeys include benefits, availability/roadmap notes, demo links and contextual enquiry CTAs
+- [x] Demo anchors standardized: `publisher`, `school`, `teacher`, `student`, `reader`, `ai`, `assessments`, `mentor`, `parent`
+- [x] AI, About and partnership CTAs use explicit destinations
+- [x] Contact interests and partnership types are allow-listed with a safe general fallback
+- [x] Footer includes parent and mentor solution links
+- [ ] Re-run the automated route, link, anchor and contact-query audit after every CTA change
 
 ## Vercel deployment
 

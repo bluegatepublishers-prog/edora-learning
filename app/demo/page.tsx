@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 const roleNavigation = [
   ["Publisher", "publisher"], ["School", "school"], ["Teacher", "teacher"], ["Student", "student"],
-  ["Book Reader", "book-reader"], ["AI", "ai-assistant"], ["Assessments", "assessments"], ["Mentor", "mentor"], ["Parent", "parent"],
+  ["Book Reader", "reader"], ["AI", "ai"], ["Assessments", "assessments"], ["Mentor", "mentor"], ["Parent", "parent"],
 ] as const;
 
 const showcases = [
@@ -49,13 +49,13 @@ const showcases = [
     capabilities: ["My subjects", "Approved books", "Revision Hub", "Practice", "Assessments", "Progress insights"],
   },
   {
-    id: "book-reader", role: "Student", icon: BookOpen, title: "Interactive Book Reader", image: "student-book-reader.webp",
+    id: "reader", role: "Student", icon: BookOpen, title: "Interactive Book Reader", image: "student-book-reader.webp",
     alt: "Edora Education OS protected interactive book reader",
     description: "Create a focused, protected reading experience that helps learners return to and navigate approved books.",
     capabilities: ["Protected full-book access", "Reading progress", "Continue reading", "Page navigation", "Zoom and fit controls", "Page bookmarks"],
   },
   {
-    id: "ai-assistant", role: "Student AI", icon: Bot, title: "Student Learning Assistant", image: "student-ai-assistant.webp",
+    id: "ai", role: "Student AI", icon: Bot, title: "Student Learning Assistant", image: "student-ai-assistant.webp",
     alt: "Edora Education OS guided student learning assistant",
     description: "Support chapter-focused learning through guided modes grounded in approved educational content—not unrestricted internet chat.",
     capabilities: ["Explain concepts", "Simplify topics", "Revision support", "Vocabulary help", "Chapter-focused doubts", "Guided learning modes"],

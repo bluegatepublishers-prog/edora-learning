@@ -22,6 +22,8 @@ export const footerNavigation = {
     { href: "/solutions#schools", label: "Schools" },
     { href: "/solutions#coaching", label: "Coaching Institutes" },
     { href: "/solutions#academies", label: "Academies" },
+    { href: "/solutions#parents", label: "Parents" },
+    { href: "/solutions#mentors", label: "Mentors" },
   ],
   Legal: [
     { href: "/privacy", label: "Privacy Policy" },
