@@ -36,6 +36,8 @@ Copy `.env.example` to a local environment file only when configuring a deployme
 - `RESEND_API_KEY`: API key for optional Resend delivery
 - `NEXT_PUBLIC_SITE_URL`: public site URL (reserved for deployment configuration)
 
+Leave `NEXT_PUBLIC_SITE_URL` unset until Edora owns and connects its custom domain. Without it, metadata uses Vercel's production project URL when available and `http://localhost:3000` during local builds. After purchasing and connecting the domain, add `NEXT_PUBLIC_SITE_URL=https://edoralearning.in` in the Vercel project environment and rebuild so canonical, Open Graph, sitemap, robots and JSON-LD URLs use the verified domain. Do not set this variable to a temporary deployment URL.
+
 The contact Server Action validates all fields. Automatic delivery occurs only when all three email values are configured and the destination exactly matches the approved Edora mailbox. The main email contains the full enquiry and timestamp, and uses the visitor’s address as reply-to. A visitor confirmation is best-effort and cannot fail the main submission.
 
 Without valid configuration, the UI clearly states that nothing was sent and provides a prefilled `mailto:edoralearning@gmail.com` fallback. There is no database and no submission is stored by the application.

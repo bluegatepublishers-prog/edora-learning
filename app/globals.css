@@ -172,3 +172,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 @media(max-width:1000px){.service-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.platform-experience-grid{grid-template-columns:1fr}.platform-experience:nth-of-type(even) .platform-experience-media{order:0}.service-roadmap{display:block}.service-roadmap .button-row{margin-top:1.2rem}}
 @media(max-width:700px){.platform-feature-list,.service-detail-grid{grid-template-columns:1fr}.service-detail-heading{grid-template-columns:54px 1fr}.service-detail-heading>span{width:50px;height:50px}.service-roadmap .button-row{display:grid}.service-roadmap .button{width:100%}}
 @media(max-width:480px){.service-link-grid{grid-template-columns:1fr}.service-link-card{min-height:145px}.platform-benefit-list li{border-radius:10px}}
+
+/* Informational cards and content-only closing sections */
+.mobile-navigation{margin-left:auto}
+.solution-card,.service-link-card{transition:none}
+.solution-card:hover{border-color:color-mix(in srgb,var(--audience) 24%,var(--border));box-shadow:var(--shadow-sm);transform:none}
+.service-link-card:hover{box-shadow:var(--shadow-sm);transform:none}
+.cta-inner,.demo-final-cta>.container{display:block}

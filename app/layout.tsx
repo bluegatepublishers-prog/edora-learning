@@ -18,8 +18,9 @@ export const metadata: Metadata = {
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.legalName }],
   keywords: ["education technology", "education operating system", "school platform", "publisher technology", "white-label learning platform"],
+  alternates: { canonical: "/" },
   openGraph: { type: "website", locale: "en_IN", siteName: siteConfig.name, title: "Edora Learning | Education Technology & Education OS", description: siteConfig.description, url: siteConfig.domain },
-  twitter: { card: "summary_large_image", title: "Edora Learning | Education Technology & Education OS", description: siteConfig.description },
+  twitter: { card: "summary", title: "Edora Learning | Education Technology & Education OS", description: siteConfig.description },
 };
 
 export default function RootLayout({

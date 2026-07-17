@@ -7,6 +7,6 @@ export function pageMetadata(title: string, description: string, path: string): 
     description,
     alternates: { canonical: path },
     openGraph: { title, description, url: absoluteUrl(path), siteName: siteConfig.name, type: "website", locale: "en_IN" },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary", title, description },
   };
 }
